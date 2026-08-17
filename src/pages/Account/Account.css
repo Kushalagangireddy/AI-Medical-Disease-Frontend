@@ -1,0 +1,189 @@
+ .account-container {
+  min-height: 100vh;
+  width: 100%;
+
+  background-image: url("../../assets/login-bg.avif");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 40px 20px;
+  box-sizing: border-box;
+
+  position: relative;
+}
+
+/* Dark overlay */
+.account-container::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background: rgba(0, 0, 0, 0.5);
+
+  z-index: 0;
+}
+
+/* Account card */
+.account-card {
+  position: relative;
+  z-index: 1;
+
+  width: 450px;
+  max-width: 100%;
+
+  padding: 40px;
+
+  box-sizing: border-box;
+
+  background: rgba(255, 255, 255, 0.1);
+
+  border: 1px solid rgba(255, 255, 255, 0.2);
+
+  border-radius: 20px;
+
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+
+  backdrop-filter: blur(12px);
+
+  color: white;
+}
+
+/* Title */
+.account-card h1 {
+  text-align: center;
+
+  font-size: 30px;
+
+  margin-bottom: 8px;
+
+  color: white;
+}
+
+/* Subtitle */
+.account-subtitle {
+  text-align: center;
+
+  color: #b9d3e8;
+
+  margin-bottom: 30px;
+}
+
+/* Account information */
+.account-info {
+  display: flex;
+  flex-direction: column;
+
+  gap: 18px;
+}
+
+/* Information item */
+.info-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 15px;
+
+  background: rgba(255, 255, 255, 0.1);
+
+  border-radius: 10px;
+
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.info-item strong {
+  color: white;
+}
+
+.info-item span {
+  color: #d5e5f2;
+}
+
+.info-item .active {
+  color: #00d26a;
+
+  font-weight: bold;
+}
+
+/* Buttons */
+.account-buttons {
+  display: flex;
+
+  gap: 15px;
+
+  margin-top: 30px;
+}
+
+.back-btn,
+.logout-account-btn {
+  flex: 1;
+
+  padding: 13px;
+
+  border: none;
+
+  border-radius: 25px;
+
+  font-size: 15px;
+
+  font-weight: bold;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+/* Back button */
+.back-btn {
+  background: #00aaff;
+
+  color: white;
+}
+
+.back-btn:hover {
+  background: #008dcc;
+
+  transform: translateY(-2px);
+}
+
+/* Logout */
+.logout-account-btn {
+  background: #e53935;
+
+  color: white;
+}
+
+.logout-account-btn:hover {
+  background: #c62828;
+
+  transform: translateY(-2px);
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .account-container {
+    padding: 30px 15px;
+  }
+
+  .account-card {
+    padding: 30px 25px;
+  }
+
+  .account-buttons {
+    flex-direction: column;
+  }
+
+  .info-item {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 5px;
+  }
+}

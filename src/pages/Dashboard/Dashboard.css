@@ -1,0 +1,119 @@
+ .dashboard {
+  min-height: 100vh;
+  padding: 120px 8% 50px;
+  background: linear-gradient(135deg, #071a2b, #0f3554);
+  color: white;
+  box-sizing: border-box;
+}
+/* Header */
+
+.dashboard-header {
+  max-width: 1200px;
+  margin: 0 auto 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dashboard-header h1 {
+  color: white;
+  font-size: 42px;
+  margin: 0 0 10px;
+}
+
+.dashboard-header p {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 17px;
+}
+
+/* Logout */
+
+.logout-btn {
+  padding: 12px 28px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 25px;
+  background: transparent;
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.logout-btn:hover {
+  background: white;
+  color: #0f3554;
+}
+
+/* Cards */
+
+.dashboard-cards {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.dashboard-card {
+  padding: 30px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  transition: 0.3s;
+}
+
+.dashboard-card:hover {
+  transform: translateY(-6px);
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.dashboard-card h2 {
+  color: white;
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.dashboard-card p {
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.7;
+  min-height: 80px;
+}
+
+/* Buttons */
+
+.dashboard-btn {
+  margin-top: 15px;
+  padding: 12px 22px;
+  border: none;
+  border-radius: 25px;
+  background: #00c853;
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.dashboard-btn:hover {
+  background: #00b248;
+  transform: translateY(-2px);
+}
+
+/* Responsive */
+
+@media (max-width: 900px) {
+  .dashboard-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 25px;
+  }
+
+  .dashboard-header h1 {
+    font-size: 34px;
+  }
+}

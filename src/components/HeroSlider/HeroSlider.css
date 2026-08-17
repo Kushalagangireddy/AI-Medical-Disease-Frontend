@@ -1,0 +1,44 @@
+ /* ================= HERO SLIDER ================= */
+
+.hero-slider {
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  z-index: 0;
+}
+
+/* ================= SLIDES ================= */
+
+.hero-slider .swiper-wrapper {
+  width: 100%;
+  height: 100%;
+}
+
+.hero-slider .swiper-slide {
+  width: 100%;
+  height: 100%;
+
+  position: relative;
+}
+
+/* ================= IMAGES ================= */
+
+.hero-slider .swiper-slide img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+  object-position: center;
+}
+
+/* ================= REMOVE EXTRA OVERLAY ================= */
+
+/* Do NOT add another overlay here.
+   Home.jsx already has .hero-overlay */

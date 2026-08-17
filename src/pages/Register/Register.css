@@ -1,0 +1,300 @@
+ /* ================= REGISTER PAGE ================= */
+
+.register-page {
+    min-height: 100vh;
+    width: 100%;
+
+    background-image: url("../../assets/login-bg.avif");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 40px 20px;
+
+    box-sizing: border-box;
+
+    position: relative;
+}
+
+
+/* ================= DARK OVERLAY ================= */
+
+.register-page::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.50);
+
+    z-index: 0;
+}
+
+
+/* ================= REGISTER CARD ================= */
+
+.register-card {
+    position: relative;
+
+    z-index: 1;
+
+    width: 420px;
+
+    max-width: 100%;
+
+    padding: 40px;
+
+    box-sizing: border-box;
+
+    background: rgba(255, 255, 255, 0.10);
+
+    border: 1px solid rgba(255, 255, 255, 0.20);
+
+    border-radius: 20px;
+
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+
+    backdrop-filter: blur(12px);
+}
+
+
+/* ================= HEADER ================= */
+
+.register-header {
+    text-align: center;
+
+    margin-bottom: 20px;
+}
+
+.register-header h1 {
+    color: white;
+
+    font-size: 30px;
+
+    margin: 0 0 5px;
+}
+
+.register-header p {
+    color: #b9d3e8;
+
+    font-size: 14px;
+
+    margin: 0;
+}
+
+
+/* ================= TITLE ================= */
+
+.register-card h2 {
+    color: white;
+
+    text-align: center;
+
+    font-size: 28px;
+
+    margin: 10px 0;
+}
+
+.register-subtitle {
+    color: #b9d3e8;
+
+    text-align: center;
+
+    margin-bottom: 25px;
+}
+
+
+/* ================= INPUT GROUP ================= */
+
+.input-group {
+    margin-bottom: 18px;
+}
+
+.input-group label {
+    display: block;
+
+    color: #e8f3fa;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    margin-bottom: 7px;
+}
+
+
+/* ================= INPUT ================= */
+
+.input-group input {
+    width: 100%;
+
+    padding: 14px 15px;
+
+    box-sizing: border-box;
+
+    /* SAME AS LOGIN */
+
+    background: #081c2d;
+
+    border: 1px solid #294861;
+
+    border-radius: 9px;
+
+    color: white;
+
+    font-size: 15px;
+
+    outline: none;
+
+    transition: 0.3s;
+}
+
+
+/* Placeholder */
+
+.input-group input::placeholder {
+    color: #6687a1;
+}
+
+
+/* Focus */
+
+.input-group input:focus {
+    border-color: #00c853;
+
+    box-shadow:
+        0 0 0 3px rgba(0, 200, 83, 0.1);
+}
+
+
+/* ================= PASSWORD BOX ================= */
+
+.password-box {
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+}
+
+.password-box input {
+    padding-right: 50px;
+}
+
+
+/* ================= EYE BUTTON ================= */
+
+.eye-btn {
+    position: absolute;
+
+    right: 12px;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    border: none;
+
+    background: transparent;
+
+    color: #6687a1;
+
+    font-size: 18px;
+
+    cursor: pointer;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+.eye-btn:hover {
+    color: #00d26a;
+}
+
+
+/* ================= REGISTER BUTTON ================= */
+
+.register-btn {
+    width: 100%;
+
+    padding: 14px;
+
+    margin-top: 5px;
+
+    border: none;
+
+    border-radius: 25px;
+
+    background: #00d26a;
+
+    color: white;
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.register-btn:hover {
+    background: #00b85c;
+
+    transform: translateY(-2px);
+}
+
+
+/* ================= LOGIN LINK ================= */
+
+.login-link {
+    text-align: center;
+
+    margin-top: 22px;
+
+    color: #b9d3e8;
+}
+
+.login-link a {
+    color: #00d26a;
+
+    text-decoration: none;
+
+    font-weight: bold;
+}
+
+.login-link a:hover {
+    color: #00b85c;
+
+    text-decoration: underline;
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 600px) {
+
+    .register-page {
+        padding: 30px 15px;
+    }
+
+    .register-card {
+        padding: 30px 25px;
+    }
+
+    .register-header h1 {
+        font-size: 26px;
+    }
+
+    .register-card h2 {
+        font-size: 25px;
+    }
+}

@@ -1,0 +1,962 @@
+ /* =========================================
+   PREDICTION PAGE
+========================================= */
+
+.prediction-page {
+  min-height: calc(100vh - 80px);
+  padding: 70px 20px;
+
+  background:
+    radial-gradient(
+      circle at 20% 20%,
+      rgba(0, 210, 255, 0.12),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 80% 80%,
+      rgba(0, 208, 132, 0.1),
+      transparent 30%
+    ),
+    linear-gradient(
+      135deg,
+      #020b16,
+      #061426,
+      #09283a
+    );
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  position: relative;
+  overflow: hidden;
+}
+
+
+/* =========================================
+   FLOATING 3D ORBS
+========================================= */
+
+.prediction-orb {
+  position: absolute;
+
+  border-radius: 50%;
+
+  filter: blur(2px);
+
+  pointer-events: none;
+
+  opacity: 0.35;
+
+  animation: floatingOrb 8s ease-in-out infinite;
+}
+
+.orb-one {
+  width: 280px;
+  height: 280px;
+
+  background:
+    radial-gradient(
+      circle at 30% 30%,
+      #00d9ff,
+      #0066ff,
+      transparent 70%
+    );
+
+  top: 5%;
+  left: -100px;
+}
+
+.orb-two {
+  width: 350px;
+  height: 350px;
+
+  background:
+    radial-gradient(
+      circle at 30% 30%,
+      #00d084,
+      #006b5a,
+      transparent 70%
+    );
+
+  right: -150px;
+  top: 40%;
+
+  animation-delay: 2s;
+}
+
+.orb-three {
+  width: 180px;
+  height: 180px;
+
+  background:
+    radial-gradient(
+      circle at 30% 30%,
+      #5d5cff,
+      #241c75,
+      transparent 70%
+    );
+
+  bottom: -50px;
+  left: 25%;
+
+  animation-delay: 4s;
+}
+
+@keyframes floatingOrb {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+
+  50% {
+    transform: translate3d(0, -35px, 0) scale(1.08);
+  }
+}
+
+
+/* =========================================
+   CONTAINER
+========================================= */
+
+.prediction-container {
+  width: 100%;
+  max-width: 950px;
+
+  position: relative;
+  z-index: 2;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.prediction-header {
+  text-align: center;
+
+  margin-bottom: 35px;
+
+  animation: fadeDown 0.8s ease;
+}
+
+@keyframes fadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(-25px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* AI BADGE */
+
+.ai-badge {
+  display: inline-flex;
+
+  align-items: center;
+  gap: 8px;
+
+  padding: 8px 18px;
+
+  border-radius: 30px;
+
+  background: rgba(0, 208, 132, 0.08);
+
+  border: 1px solid rgba(0, 208, 132, 0.35);
+
+  color: #00e89a;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  letter-spacing: 1.5px;
+
+  box-shadow:
+    0 0 20px rgba(0, 208, 132, 0.08);
+
+  animation: badgeGlow 2.5s ease-in-out infinite;
+}
+
+.ai-badge span {
+  font-size: 16px;
+}
+
+@keyframes badgeGlow {
+  0%,
+  100% {
+    box-shadow:
+      0 0 15px rgba(0, 208, 132, 0.08);
+  }
+
+  50% {
+    box-shadow:
+      0 0 30px rgba(0, 208, 132, 0.25);
+  }
+}
+
+
+/* HEADER TITLE */
+
+.prediction-header h1 {
+  margin: 20px 0 10px;
+
+  color: white;
+
+  font-size: clamp(35px, 5vw, 52px);
+
+  font-weight: 800;
+
+  letter-spacing: -1px;
+}
+
+.prediction-header h1 span {
+  background:
+    linear-gradient(
+      90deg,
+      #00d084,
+      #00c8ff,
+      #6c63ff
+    );
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  background-size: 200% auto;
+
+  animation: gradientMove 4s linear infinite;
+}
+
+@keyframes gradientMove {
+  to {
+    background-position: 200% center;
+  }
+}
+
+.prediction-header p {
+  max-width: 650px;
+
+  margin: auto;
+
+  color: #9db3c5;
+
+  font-size: 16px;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================
+   MAIN 3D CARD
+========================================= */
+
+.prediction-card {
+  width: 100%;
+
+  padding: 45px;
+
+  box-sizing: border-box;
+
+  position: relative;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(20, 50, 70, 0.92),
+      rgba(5, 20, 35, 0.94)
+    );
+
+  border: 1px solid rgba(82, 139, 166, 0.35);
+
+  border-radius: 28px;
+
+  backdrop-filter: blur(20px);
+
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.45),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+
+  transform-style: preserve-3d;
+
+  animation: cardAppear 0.9s ease;
+
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+.prediction-card:hover {
+  transform: translateY(-5px);
+
+  box-shadow:
+    0 40px 100px rgba(0, 0, 0, 0.55),
+    0 0 40px rgba(0, 208, 132, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+@keyframes cardAppear {
+  from {
+    opacity: 0;
+
+    transform:
+      perspective(1000px)
+      rotateX(8deg)
+      translateY(40px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      perspective(1000px)
+      rotateX(0)
+      translateY(0);
+  }
+}
+
+
+/* =========================================
+   CARD GLOW
+========================================= */
+
+.card-glow {
+  position: absolute;
+
+  width: 250px;
+  height: 250px;
+
+  top: -100px;
+  right: -100px;
+
+  background: #00d084;
+
+  filter: blur(120px);
+
+  opacity: 0.08;
+
+  pointer-events: none;
+}
+
+
+/* =========================================
+   CARD TEXT
+========================================= */
+
+.prediction-card > h2 {
+  text-align: center;
+
+  color: white;
+
+  font-size: 26px;
+
+  margin-bottom: 8px;
+}
+
+.prediction-description {
+  text-align: center;
+
+  color: #91aabd;
+
+  margin-bottom: 25px;
+}
+
+
+/* =========================================
+   TEXTAREA
+========================================= */
+
+.textarea-wrapper {
+  position: relative;
+}
+
+.prediction-card textarea {
+  width: 100%;
+
+  min-height: 160px;
+
+  padding: 18px;
+
+  box-sizing: border-box;
+
+  resize: vertical;
+
+  outline: none;
+
+  color: white;
+
+  font-size: 16px;
+
+  line-height: 1.6;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(4, 20, 34, 0.95),
+      rgba(8, 31, 48, 0.9)
+    );
+
+  border: 1px solid #31546b;
+
+  border-radius: 16px;
+
+  transition:
+    border 0.3s ease,
+    box-shadow 0.3s ease,
+    transform 0.3s ease;
+}
+
+.prediction-card textarea:hover {
+  border-color: #416d85;
+}
+
+.prediction-card textarea:focus {
+  border-color: #00d084;
+
+  box-shadow:
+    0 0 0 3px rgba(0, 208, 132, 0.08),
+    0 0 30px rgba(0, 208, 132, 0.08);
+
+  transform: translateY(-2px);
+}
+
+.prediction-card textarea::placeholder {
+  color: #637f93;
+}
+
+
+/* =========================================
+   PREDICT BUTTON
+========================================= */
+
+.predict-button {
+  width: 100%;
+
+  margin-top: 22px;
+
+  padding: 17px 22px;
+
+  border: none;
+
+  border-radius: 14px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #00d084,
+      #00a878
+    );
+
+  color: white;
+
+  font-size: 17px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 12px;
+
+  box-shadow:
+    0 12px 30px rgba(0, 208, 132, 0.2);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.predict-button:hover:not(:disabled) {
+  transform:
+    translateY(-4px)
+    scale(1.01);
+
+  box-shadow:
+    0 18px 45px rgba(0, 208, 132, 0.35);
+}
+
+.predict-button:active:not(:disabled) {
+  transform:
+    translateY(0)
+    scale(0.99);
+}
+
+.predict-button:disabled {
+  opacity: 0.7;
+
+  cursor: not-allowed;
+}
+
+.arrow {
+  font-size: 22px;
+
+  transition: transform 0.3s ease;
+}
+
+.predict-button:hover .arrow {
+  transform: translateX(5px);
+}
+
+
+/* =========================================
+   LOADING SPINNER
+========================================= */
+
+.spinner {
+  width: 19px;
+  height: 19px;
+
+  border: 3px solid rgba(255, 255, 255, 0.3);
+
+  border-top-color: white;
+
+  border-radius: 50%;
+
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* =========================================
+   RESULT CARD
+========================================= */
+
+.prediction-result {
+  margin-top: 35px;
+
+  padding: 30px;
+
+  border-radius: 22px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(17, 55, 70, 0.95),
+      rgba(7, 28, 43, 0.95)
+    );
+
+  border: 1px solid rgba(0, 208, 132, 0.25);
+
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.25);
+
+  animation: resultAppear 0.7s ease;
+}
+
+@keyframes resultAppear {
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(30px)
+      scale(0.96);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0)
+      scale(1);
+  }
+}
+
+
+/* =========================================
+   RESULT TITLE
+========================================= */
+
+.result-title {
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+
+  margin-bottom: 25px;
+}
+
+.result-icon {
+  width: 45px;
+  height: 45px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: rgba(0, 208, 132, 0.15);
+
+  border: 1px solid rgba(0, 208, 132, 0.35);
+
+  color: #00e89a;
+
+  font-size: 22px;
+
+  animation: successPulse 2s infinite;
+}
+
+@keyframes successPulse {
+  0%,
+  100% {
+    box-shadow:
+      0 0 0 rgba(0, 208, 132, 0);
+  }
+
+  50% {
+    box-shadow:
+      0 0 25px rgba(0, 208, 132, 0.3);
+  }
+}
+
+.result-title h2 {
+  margin: 0;
+
+  color: white;
+
+  font-size: 21px;
+}
+
+.result-title p {
+  margin: 4px 0 0;
+
+  color: #7fa0b3;
+
+  font-size: 13px;
+}
+
+
+/* =========================================
+   DISEASE
+========================================= */
+
+.result-disease {
+  padding: 22px;
+
+  margin-bottom: 22px;
+
+  border-radius: 15px;
+
+  background: rgba(0, 0, 0, 0.18);
+
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.result-label {
+  display: block;
+
+  color: #7fa0b3;
+
+  font-size: 13px;
+
+  margin-bottom: 8px;
+}
+
+.result-disease h3 {
+  margin: 0;
+
+  color: #00e89a;
+
+  font-size: 28px;
+}
+
+
+/* =========================================
+   CONFIDENCE
+========================================= */
+
+.confidence-section {
+  margin-bottom: 25px;
+}
+
+.confidence-header {
+  display: flex;
+
+  justify-content: space-between;
+
+  margin-bottom: 10px;
+
+  color: #b8c9d8;
+
+  font-size: 14px;
+}
+
+.confidence-header strong {
+  color: #00e89a;
+
+  font-size: 17px;
+}
+
+.confidence-bar {
+  height: 9px;
+
+  overflow: hidden;
+
+  border-radius: 20px;
+
+  background: #102c40;
+}
+
+.confidence-fill {
+  height: 100%;
+
+  border-radius: inherit;
+
+  background:
+    linear-gradient(
+      90deg,
+      #00a878,
+      #00e89a,
+      #00d9ff
+    );
+
+  box-shadow:
+    0 0 15px rgba(0, 208, 132, 0.5);
+
+  animation: confidenceGrow 1.2s ease;
+}
+
+@keyframes confidenceGrow {
+  from {
+    width: 0 !important;
+  }
+}
+
+
+/* =========================================
+   SYMPTOMS
+========================================= */
+
+.symptoms-result {
+  margin-top: 25px;
+}
+
+.symptoms-result h3,
+.precautions-heading h3 {
+  color: white;
+
+  margin-bottom: 12px;
+
+  font-size: 17px;
+}
+
+.symptom-tags {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 9px;
+}
+
+.symptom-tags span {
+  padding: 7px 12px;
+
+  border-radius: 20px;
+
+  background: rgba(0, 150, 255, 0.08);
+
+  border: 1px solid rgba(0, 150, 255, 0.2);
+
+  color: #8fcfff;
+
+  font-size: 13px;
+
+  transition: 0.3s ease;
+}
+
+.symptom-tags span:hover {
+  transform: translateY(-3px);
+
+  background: rgba(0, 150, 255, 0.15);
+}
+
+
+/* =========================================
+   PRECAUTIONS
+========================================= */
+
+.precautions-section {
+  margin-top: 30px;
+
+  padding-top: 25px;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.precautions-heading {
+  display: flex;
+
+  align-items: center;
+
+  gap: 14px;
+
+  margin-bottom: 18px;
+}
+
+.precautions-heading > span {
+  font-size: 28px;
+}
+
+.precautions-heading h3 {
+  margin: 0 0 4px;
+}
+
+.precautions-heading p {
+  margin: 0;
+
+  color: #7894a7;
+
+  font-size: 12px;
+}
+
+.precautions-list {
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 12px;
+}
+
+.precaution-item {
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 10px;
+
+  padding: 14px;
+
+  border-radius: 12px;
+
+  background: rgba(0, 208, 132, 0.05);
+
+  border: 1px solid rgba(0, 208, 132, 0.12);
+
+  color: #bdd0dc;
+
+  font-size: 14px;
+
+  line-height: 1.5;
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease;
+}
+
+.precaution-item:hover {
+  transform: translateY(-3px);
+
+  background: rgba(0, 208, 132, 0.09);
+}
+
+.check {
+  flex-shrink: 0;
+
+  width: 22px;
+  height: 22px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: rgba(0, 208, 132, 0.15);
+
+  color: #00e89a;
+
+  font-size: 12px;
+}
+
+
+/* =========================================
+   MEDICAL DISCLAIMER
+========================================= */
+
+.medical-note {
+  margin-top: 25px;
+
+  padding: 13px 15px;
+
+  border-radius: 10px;
+
+  background: rgba(255, 193, 7, 0.05);
+
+  border: 1px solid rgba(255, 193, 7, 0.15);
+
+  color: #aeb7bd;
+
+  font-size: 12px;
+
+  line-height: 1.5;
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 700px) {
+
+  .prediction-page {
+    padding: 45px 15px;
+  }
+
+  .prediction-card {
+    padding: 28px 20px;
+
+    border-radius: 20px;
+  }
+
+  .prediction-header h1 {
+    font-size: 34px;
+  }
+
+  .prediction-header p {
+    font-size: 14px;
+  }
+
+  .prediction-result {
+    padding: 22px 18px;
+  }
+
+  .precautions-list {
+    grid-template-columns: 1fr;
+  }
+
+  .result-disease h3 {
+    font-size: 23px;
+  }
+}
+
+
+@media (max-width: 450px) {
+
+  .prediction-header h1 {
+    font-size: 29px;
+  }
+
+  .prediction-card textarea {
+    min-height: 130px;
+  }
+
+  .prediction-card {
+    padding: 25px 16px;
+  }
+}

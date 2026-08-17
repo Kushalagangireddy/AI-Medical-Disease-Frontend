@@ -1,0 +1,170 @@
+ /* ================= WELCOME PAGE ================= */
+
+.welcome-page {
+    min-height: 100vh;
+    width: 100%;
+
+    background-image: url("../../assets/login-bg.avif");
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+    overflow: hidden;
+
+    animation: backgroundSlide 10s ease-in-out infinite alternate;
+}
+
+
+/* ================= DARK OVERLAY ================= */
+
+.welcome-overlay {
+    position: absolute;
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.35);
+
+    z-index: 1;
+}
+
+
+/* ================= CONTENT ================= */
+
+.welcome-card {
+    position: relative;
+    z-index: 2;
+
+    width: 700px;
+    max-width: 90%;
+
+    text-align: center;
+
+    /* Remove box */
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    backdrop-filter: none;
+
+    padding: 30px;
+}
+
+
+/* ================= TITLE ================= */
+
+.welcome-card h1 {
+    color: white;
+
+    font-size: 58px;
+
+    font-weight: 800;
+
+    margin-bottom: 20px;
+
+    letter-spacing: 1px;
+
+    /* Highlight effect */
+    text-shadow:
+        0 0 10px rgba(255, 255, 255, 0.8),
+        0 0 20px rgba(0, 210, 106, 0.7),
+        0 0 40px rgba(0, 210, 106, 0.5);
+}
+
+
+/* ================= DESCRIPTION ================= */
+
+.welcome-card p {
+    color: #e1f1ff;
+
+    font-size: 20px;
+
+    margin-bottom: 35px;
+
+    text-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.8);
+}
+
+
+/* ================= LOGIN BUTTON ================= */
+
+.welcome-card button {
+    width: 420px;
+    max-width: 100%;
+
+    padding: 16px;
+
+    border: none;
+
+    border-radius: 30px;
+
+    background: #00d26a;
+
+    color: white;
+
+    font-size: 19px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 25px rgba(0, 210, 106, 0.35);
+
+    transition: 0.3s;
+}
+
+
+.welcome-card button:hover {
+    background: #00b85c;
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 10px 30px rgba(0, 210, 106, 0.55);
+}
+
+
+/* ================= IMAGE SLIDING ================= */
+
+@keyframes backgroundSlide {
+
+    0% {
+        background-position: 0% center;
+        background-size: 105%;
+    }
+
+    50% {
+        background-position: 50% center;
+        background-size: 110%;
+    }
+
+    100% {
+        background-position: 100% center;
+        background-size: 105%;
+    }
+
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 600px) {
+
+    .welcome-card {
+        padding: 20px;
+    }
+
+    .welcome-card h1 {
+        font-size: 40px;
+    }
+
+    .welcome-card p {
+        font-size: 16px;
+    }
+
+    .welcome-card button {
+        width: 100%;
+    }
+}
